@@ -8,20 +8,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Iniciando o Workflow"
-
       - name: Checkout
         uses: actions/checkout@v5
 
-      - name: Informações do Repositório
+      - name: Informações
         run: |
           echo "Repositório: ${{ github.repository }}"
           echo "Autor: ${{ github.actor }}"
 
-      - name: Listando Arquivos
-        run: ls ${{ github.workspace }}
-
-      - name: Verificando README
+      - name: Verificar README
         run: |
           if [ -f README.md ]; then
             echo "README.md encontrado"
